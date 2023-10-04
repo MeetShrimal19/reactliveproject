@@ -6,11 +6,13 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 import Error from './components/Error';
+import Profile from './components/Profile';
 
 
 function App() {
   const [mode, setMode]= useState('light');
   const [alert, setAlert]= useState(null);
+  ///const [count, setCount]=useState(0);
 
   const showAlert=(message,type)=>
   {
@@ -46,6 +48,7 @@ function App() {
     
     <Navbar title="TextUtils" about="About" mode={mode} toggelMode={toggelMode}/>
     <Alert alert={alert}/>
+    
     <div className="container my-3">
     {/* <Routes>
           <Route exact path="/about" element={ }>
@@ -57,8 +60,11 @@ function App() {
           </Route>
           <Route path='*' element={<Error/>}>
         </Route>
+        
         </Routes> */}
         <TextForm showAlert={showAlert} heading="Enter the text below"/>
+        <Profile text={{name:'meet'}}/>
+      {/* <h1>use state {count}</h1> */}
         {/* <About /> */}
     </div>
     
